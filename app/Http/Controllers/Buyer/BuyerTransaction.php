@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Transaction;
+namespace App\Http\Controllers\Buyer;
 
-use App\Http\Controllers\ApiController;
-use App\Models\Transaction;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TransactionController extends ApiController
+class BuyerTransaction extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $transactions = Transaction::all();
-
-        return $this->showAll($transactions);
+        //
     }
 
     /**
@@ -37,11 +38,15 @@ class TransactionController extends ApiController
         //
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        $transaction = Transaction::findOrFail($id);
-
-        return $this->showOne($transaction);
+        //
     }
 
     /**

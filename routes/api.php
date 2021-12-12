@@ -19,8 +19,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('buyers', 'App\Http\Controllers\Buyer\BuyerController', ['only' => ['show', 'index']]);
+Route::resource('buyers.transactions', 'App\Http\Controllers\Buyer\BuyerTransactionController', ['only' => [ 'index']]);
+Route::resource('buyers.products', 'App\Http\Controllers\Buyer\BuyerProductController', ['only' => [ 'index']]);
+Route::resource('buyers.sellers', 'App\Http\Controllers\Buyer\BuyerSellerController', ['only' => [ 'index']]);
+Route::resource('buyers.categories', 'App\Http\Controllers\Buyer\BuyerCategoryController', ['only' => [ 'index']]);
 Route::resource('sellers', 'App\Http\Controllers\Seller\SellerController', ['only' => ['show', 'index']]);
 Route::resource('products', 'App\Http\Controllers\Product\ProductController', ['only' => ['show', 'index']]);
 Route::resource('transactions', 'App\Http\Controllers\Transaction\TransactionController', ['only' => ['show', 'index']]);
+Route::resource('transactions.categories', 'App\Http\Controllers\Transaction\TransactionCategoryController', ['only' => ['index']]);
+Route::resource('transactions.seller', 'App\Http\Controllers\Transaction\TransactionSellerController', ['only' => ['index']]);
 Route::resource('categories', 'App\Http\Controllers\Category\CategoryController', ['except' => ['create', 'edit']]);
 Route::resource('users', 'App\Http\Controllers\User\UserController', ['except' => ['create', 'edit']]);
