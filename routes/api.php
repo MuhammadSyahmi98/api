@@ -47,3 +47,5 @@ Route::resource('categories.transactions', 'App\Http\Controllers\Category\Catego
 Route::resource('categories.buyers', 'App\Http\Controllers\Category\CategoryBuyerController', ['only' => 'index']);
 
 Route::resource('users', 'App\Http\Controllers\User\UserController', ['except' => ['create', 'edit']]);
+
+Route::name('verify')->get('users/verify/{token}', 'App\Http\Controllers\User\UserController@verify');
